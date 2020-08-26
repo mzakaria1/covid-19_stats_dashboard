@@ -53,7 +53,7 @@ export class MainLayout extends Component {
         <Layout className="site-layout">
           <Header
             className="site-layout-background"
-            style={{ padding: 0, background: "#fff", height: "75px" }}>
+            style={{ marginBottom: "16px", padding: 0, background: "#fff" }}>
             <div
               style={{
                 fontSize: "28px",

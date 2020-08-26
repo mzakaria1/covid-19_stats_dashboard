@@ -213,9 +213,7 @@ export class CountriesStats extends Component {
                 defaultValue="Select for Sort"
                 style={{ width: 200 }}
                 loading={false}
-                onChange={this.sortSearch}
-                // onClear={this.clearSort}
-              >
+                onChange={this.sortSearch}>
                 <Option value="Select for Sort">Select for Sort</Option>
                 <Option value="population">Population</Option>
                 <Option value="tests">Tests</Option>
