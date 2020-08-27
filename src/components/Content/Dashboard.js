@@ -39,7 +39,7 @@ export class Dashboard extends Component {
         this.props.dispatch({ type: "FETCH_GLOBAL", allCounts: res.data });
       })
       .catch((err) => {
-        console.log(err);
+        message.error(`There is some Error: ${err}`, 3);
       });
   };
 
@@ -232,7 +232,7 @@ export class Dashboard extends Component {
         });
       })
       .catch((err) => {
-        console.log(err);
+        message.error(`There is some Error: ${err}`, 3);
       });
   };
 

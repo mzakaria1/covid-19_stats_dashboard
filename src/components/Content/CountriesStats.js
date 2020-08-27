@@ -10,6 +10,7 @@ import {
   Table,
   Input,
   Button,
+  message,
 } from "antd";
 import Highlighter from "react-highlight-words";
 import { SearchOutlined } from "@ant-design/icons";
@@ -175,7 +176,10 @@ export class CountriesStats extends Component {
         });
         this.setState({ loading: false });
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        message.error(`There is some Error: ${err}`, 3);
+      });
   };
 
   statsByCountries = () => {
@@ -190,7 +194,10 @@ export class CountriesStats extends Component {
           countries: res.data,
         });
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        message.error(`There is some Error: ${err}`, 3);
+      });
   };
 
   componentDidMount = () => {
