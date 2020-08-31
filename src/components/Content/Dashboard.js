@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { MainLayout } from "../common/MainLayout";
-import { Row, Col, Card, Statistic } from "antd";
+import { Row, Col, Card, Statistic,message } from "antd";
 import PageInfo from "../Content/PageInfo";
 import Chart from "react-apexcharts";
 import { axios } from "../config/axiosConfig";
 import { connect } from "react-redux";
+
 
 const mapStateToProps = (state) => ({
   allCounts: state.allCounts,
