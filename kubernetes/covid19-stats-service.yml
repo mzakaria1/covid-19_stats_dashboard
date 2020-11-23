@@ -1,14 +1,15 @@
+--- 
 apiVersion: v1
 kind: Service
-metadata:
-  name: covid19-stats-service
-  labels:
+metadata: 
+  labels: 
     app: covid19-stats
-spec:
-  selector:
+  name: covid19-stats-service
+spec: 
+  ports: 
+    - nodePort: 31000
+      port: 80
+      targetPort: 80
+  selector: 
     app: covid19-stats
   type: NodePort
-  ports:
-  - nodePort: 31000
-    port: 80
-    targetPort: 80
