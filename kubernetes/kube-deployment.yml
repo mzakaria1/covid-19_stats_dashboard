@@ -1,4 +1,4 @@
-apiVersion: covid19-dashboard/v1
+apiVersion: app/v1
 kind: Deployment
 metadata:
   name: covid19-stats-deployment
@@ -22,6 +22,7 @@ spec:
 #            imagePullPolicy: IfNotPresent
             ports:
             - containerPort: 80
+
 
 
 
