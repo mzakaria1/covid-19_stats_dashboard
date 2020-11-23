@@ -10,13 +10,13 @@ spec:
   selector:
     matchLabels:
       app: covid19-stats
-    template:
-      metadata:
-        labels:
-          app: covid19-stats
-      spec:
-        containers:
-          - name: covid19-stats
-          - image: mzakaria1/covid19-react-stats-dashboard
-            ports:
-              - containerPort: 80
+  template:
+    metadata:
+      labels:
+        app: covid19-stats
+    spec:
+      containers:
+        - name: covid19-stats
+        - image: mzakaria1/covid19-react-stats-dashboard
+          ports:
+            - containerPort: 80
