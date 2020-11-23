@@ -16,7 +16,9 @@ spec:
         app: covid19-stats
     spec:
       containers:
-        - name: covid19-stats
-        - image: mzakaria1/covid19-react-stats-dashboard
+        -
+          image: mzakaria1/covid19-react-stats-dashboard
+          name: covid19-stats
           ports:
-            - containerPort: 80
+            -
+              containerPort: 80
