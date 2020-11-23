@@ -1,0 +1,27 @@
+apiVersion: covid19-dashboard/v1
+kind: Deployment
+metadata:
+  name: covid19-stats-deployment
+  labels:
+    app: covid19-stats
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: covid19-stats
+
+    template:
+      metadata:
+        labels:
+          app: covid19-stats
+      spec:
+        containers:
+          - name: covid19-stats
+          - image: mzakaria1/covid19-react-stats-dashboard
+#            imagePullPolicy: IfNotPresent
+            ports:
+            - containerPort: 80
+
+
+
