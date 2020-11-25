@@ -7,9 +7,9 @@ metadata:
   name: covid19-stats-service
 spec: 
   ports: 
-    - nodePort: 31000
-      port: 80
-      targetPort: 80
+  - nodePort: 31000
+    port: 5000
+    targetPort: 5000
   selector: 
     app: covid19-stats
   type: NodePort
