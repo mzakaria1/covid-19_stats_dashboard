@@ -6,9 +6,9 @@ spec:
   rules:
   - http:
       paths:
-#      - path: /
-#        patchType: Prefix
-      - backend:
+      - path: /
+        patchType: Prefix
+        backend:
           service:
             name: covid19-stats-service
             port:
