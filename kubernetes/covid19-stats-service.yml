@@ -5,7 +5,7 @@ metadata:
   labels: 
     app: covid19-stats
   name: covid19-stats-service
-#  namespace: covid19-namespace
+  namespace: covid19-namespace
 spec: 
   ports: 
   - nodePort: 31000

@@ -2,7 +2,7 @@
   kind: Ingress
   metadata:
     name: covid19-stats-ingress
-#    namespace: covid19-namespace
+    namespace: covid19-namespace
     annotations:
       kubernetes.io/ingress.class: nginx
   spec:
