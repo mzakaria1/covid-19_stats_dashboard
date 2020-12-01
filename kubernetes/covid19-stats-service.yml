@@ -5,12 +5,12 @@ metadata:
   labels: 
     app: covid19-stats
   name: covid19-stats-service
-  namespace: covid19-namespace
+#  namespace: covid19-namespace
 spec: 
   ports: 
-#  - nodePort: 31000
-    - port: 5000
-      targetPort: 5000
+  - nodePort: 31000
+    port: 5000
+    targetPort: 5000
   selector: 
     app: covid19-stats
-  type: ClusterIp
+  type: NodePort
