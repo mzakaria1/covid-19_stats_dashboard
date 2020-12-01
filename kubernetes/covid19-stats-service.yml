@@ -9,8 +9,8 @@ metadata:
 spec: 
   ports: 
 #  - nodePort: 31000
-    port: 5000
-    targetPort: 5000
+    - port: 5000
+      targetPort: 5000
   selector: 
     app: covid19-stats
   type: ClusterIp
