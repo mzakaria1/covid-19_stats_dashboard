@@ -11,6 +11,7 @@ spec:
   selector:
     app: nginx-service
     tier: backend
+  type: LoadBalancer
   ports:
   - port: 80
 #    targetPort: 5000
