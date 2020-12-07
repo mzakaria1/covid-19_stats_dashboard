@@ -1,0 +1,32 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: nginx-ns
+  labels:
+    app: nginx-deployment
+    tier: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-deployment
+  template:
+    metadata:
+      labels:
+        app: nginx-deployment
+      spec:
+        containers:
+          - name: nginx
+            image: nginx:latest
+            imagePullPolicy: Always
+            ports:
+              - containerPort: 80
+            volumeMounts:
+              - name: nginx-persistent-storage
+                mountPath: /etc/nginx/nginx.conf
+        volumes:
+          - name: nginx-persistent-storage
+            hostPath:
+              path: /mnt/gluster/nginx/nginx.conf

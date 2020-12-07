@@ -1,0 +1,26 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+  namespace: nginx-ns
+  labels:
+    app: app-deployment
+    tier: backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: app-deployment
+      tier: backend
+  template:
+    metadata:
+      labels:
+        app: app-deployment
+        tier: backend
+    spec:
+      containers:
+        - image: mzakaria1/covid19-react-stats-dashboard
+          name: app-deployment-cont
+            ports:
+                - containerPort: 5000

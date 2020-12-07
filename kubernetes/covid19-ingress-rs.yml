@@ -7,8 +7,8 @@
       kubernetes.io/ingress.class: nginx
   spec:
     rules:
-    - host: covid19-stats.info
-      http:
+#    - host: covid19-stats.info
+    - http:
         paths:
         - path: /
           pathType: Prefix
