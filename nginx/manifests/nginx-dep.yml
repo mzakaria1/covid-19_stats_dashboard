@@ -26,3 +26,5 @@ spec:
           volumeMounts:
             - name: nginx-persistent-storage
               mountPath: /etc/nginx/nginx.conf
+      volumes:
+        - name: nginx-persistent-storage
