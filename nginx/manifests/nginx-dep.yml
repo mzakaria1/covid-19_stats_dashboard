@@ -16,17 +16,17 @@ spec:
     metadata:
       labels:
         app: nginx-deployment
-      spec:
-        containers:
-          - name: nginx
-            image: nginx:latest
-            imagePullPolicy: Always
-            ports:
-              - containerPort: 80
-            volumeMounts:
-              - name: nginx-persistent-storage
-                mountPath: /etc/nginx/nginx.conf
-        volumes:
-          - name: nginx-persistent-storage
-            hostPath:
-              path: /mnt/gluster/nginx/nginx.conf
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: nginx-persistent-storage
+              mountPath: /etc/nginx/nginx.conf
+      volumes:
+        - name: nginx-persistent-storage
+          hostPath:
+            path: /mnt/gluster/nginx/nginx.conf
