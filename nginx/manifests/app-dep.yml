@@ -22,5 +22,5 @@ spec:
       containers:
         - image: mzakaria1/covid19-react-stats-dashboard
           name: app-deployment-cont
-            ports:
-            - containerPort: 5000
+          ports:
+          - containerPort: 5000
