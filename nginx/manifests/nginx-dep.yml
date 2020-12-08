@@ -24,7 +24,14 @@ spec:
           ports:
             - containerPort: 80
           volumeMounts:
-            - name: nginx-persistent-storage
+            - name: nginx-configmap-storage
               mountPath: /etc/nginx/nginx.conf
+              subpath: nginx.conf
+      #              mountPath: /etc/nginx
       volumes:
-        - name: nginx-persistent-storage
+        - name: nginx-configmap-storage
+          configMap:
+            name: nginx-configmap # place ConfigMap `nginx-conf` on /etc/nginx
+#            items:
+#              - key: nginx.conf
+#                path: nginx.conf
