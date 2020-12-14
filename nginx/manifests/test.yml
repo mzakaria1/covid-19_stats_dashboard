@@ -1,0 +1,49 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  namespace: nginx-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: nginx
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        name: nginx
+    spec:
+      containers:
+      - name:  nginx
+        image: nginx:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+          hostPort: 81
+#        - containerPort: 443
+#          hostPort: 443
+        readinessProbe:
+          tcpSocket:
+#            port: 443
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        volumeMounts:
+          - name: nginx-configmap-storage
+            mountPath: /etc/nginx/nginx.conf
+            subPath: nginx.conf
+      volumes:
+        - name: nginx-configmap-storage
+          configMap:
+            name: nginx-configmap
+#      nodeSelector:
+#        nginxnode: nginx
+#      imagePullSecrets:
+#        - name: docker-hub-secret
+---
