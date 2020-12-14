@@ -35,4 +35,4 @@ spec:
             name: nginx-configmap # place ConfigMap `nginx-conf` on /etc/nginx
             items:
               - key: nginx.conf
-                path: ../nginx.conf
+                path: nginx.conf
