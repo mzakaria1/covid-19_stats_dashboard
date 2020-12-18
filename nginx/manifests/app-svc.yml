@@ -5,12 +5,14 @@ metadata:
   name: app-service
   namespace: nginx-ns
   labels:
-    app: app-service
+    app: app
     tier: backend
 spec:
   selector:
-    app: app-service
+    app: app
     tier: backend
   ports:
   - port: 5000
+    targetPort: 5000
     protocol: TCP
+

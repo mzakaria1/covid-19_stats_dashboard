@@ -16,29 +16,24 @@ data:
       accept_mutex off; # set to 'on' if nginx worker_processes > 1
     }
 
-
     http {
-      include conf/mime.types;
+      include mime.types;
       default_type application/octet-stream;
       access_log /dev/stdout combined;
       sendfile off;
 
-      server {
-        # if no Host match, close the connection to prevent host spoofing
-        listen 5000 default_server;
-        return 444;
+      upstream app_server {
+        server unix:/tmp/gunicorn.sock fail_timeout=0;
       }
 
       server {
 
         listen 80;
-
-        location / {
-          proxy_pass http://app-service:5000;
+        location  / {
+          proxy_pass http://app-service.nginx-ns.svc.cluster.local:5000;
           proxy_redirect off;
           proxy_request_buffering off;
-          proxy_store off;
-          proxy_cache off;
+
         }
       }
     }

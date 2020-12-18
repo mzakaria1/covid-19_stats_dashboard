@@ -9,14 +9,15 @@ metadata:
     tier: backend
 spec:
   selector:
-    app: nginx-service
+    app: nginx
     tier: backend
 #  type: ClusterIP
+#  type: NodePort
   ports:
   - port: 80
+    protocol: TCP
     targetPort: 80
 #    nodePort: 31000
 #    targetPort: 5000
-    protocol: TCP
 #  externalIPs:
 #    - 192.168.99.102
